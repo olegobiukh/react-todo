@@ -159,8 +159,12 @@ class App extends React.Component {
                                     </form>
                                     <div className={this.state.editId !== item.id ? "display-block p-16 item"
                                         : "display-none"}>
-                                        <input type="checkbox" checked={item.completed}
-                                               onChange={() => this.handleChangeCheckbox(item.id)}/>
+                                        {/*<input type="checkbox" checked={item.completed}*/}
+                                        {/*       onChange={() => this.handleChangeCheckbox(item.id)}/>*/}
+                                        <div className="checkbox">
+                                            <input type="checkbox" id={"checkbox_" + item.id}  checked={item.completed} onChange={() => this.handleChangeCheckbox(item.id)} />
+                                                <label htmlFor={"checkbox_" + item.id}></label>
+                                        </div>
                                         <span className={
                                             item.completed
                                                 ? "completed item__text"
